@@ -1,0 +1,21 @@
+# Virtual Environment
+venv/
+mysql_venv/
+.env
+
+# MySQL data (don't commit database files)
+*.sql
+!mysql_schema.sql
+
+# System files
+__pycache__/
+*.pyc
+.DS_Store
+
+# Data files (only keep sample)
+data/dataset.csv
+data/processed_*.parquet/
+
+# IDE
+.vscode/
+.idea/
