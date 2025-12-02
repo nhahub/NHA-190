@@ -338,6 +338,8 @@ def options_add_student():
 COURSE_INV = {v: k for k, v in COURSE.items()}
 GENDER_INV = {0: "Female", 1: "Male"}
 YESNO_INV = {0: "No", 1: "Yes"}
+
+
 @app.get("/high_risk_students")
 def get_high_risk_students():
     db = None
@@ -346,72 +348,46 @@ def get_high_risk_students():
         db = get_db()
         cursor = db.cursor(dictionary=True)
 
-        cursor.execute("""
+        # Simple, fast, 100% consistent with Prefect pipeline
+        query = """
             SELECT 
                 student_id,
-                marital_status, application_mode, application_order, course,
-                attendance_regime, previous_qualification, nationality,
-                mother_qualification, father_qualification, mother_occupation,
-                father_occupation, displaced, educational_special_needs, debtor,
-                tuition_fees_up_to_date, gender, scholarship_holder,
-                age_at_enrollment, international,
-                cu_1st_sem_credited, cu_1st_sem_enrolled, cu_1st_sem_evaluations,
-                cu_1st_sem_approved, cu_1st_sem_grade, cu_1st_sem_without_evaluation,
-                cu_2nd_sem_credited, cu_2nd_sem_enrolled, cu_2nd_sem_evaluations,
-                cu_2nd_sem_approved, cu_2nd_sem_grade, cu_2nd_sem_without_evaluation,
-                unemployment_rate, inflation_rate, gdp,
+                course,
+                age_at_enrollment,
+                gender,
+                debtor,
+                scholarship_holder,
                 target
             FROM student_data
-            ORDER BY student_id DESC
-        """)
-        all_students = cursor.fetchall()
+            WHERE target IS NOT NULL 
+              AND target > 25
+            ORDER BY target DESC
+        """
 
-        high_risk_list = []
+        cursor.execute(query)
+        rows = cursor.fetchall()
 
-        for s in all_students:
-            features = (
-                s['marital_status'], s['application_mode'], s['application_order'],
-                s['course'], s['attendance_regime'], s['previous_qualification'],
-                s['nationality'], s['mother_qualification'], s['father_qualification'],
-                s['mother_occupation'], s['father_occupation'], s['displaced'],
-                s['educational_special_needs'], s['debtor'], s['tuition_fees_up_to_date'],
-                s['gender'], s['scholarship_holder'], s['age_at_enrollment'],
-                s['international'],
-                s['cu_1st_sem_credited'], s['cu_1st_sem_enrolled'], s['cu_1st_sem_evaluations'],
-                s['cu_1st_sem_approved'], s['cu_1st_sem_grade'], s['cu_1st_sem_without_evaluation'],
-                s['cu_2nd_sem_credited'], s['cu_2nd_sem_enrolled'], s['cu_2nd_sem_evaluations'],
-                s['cu_2nd_sem_approved'], s['cu_2nd_sem_grade'], s['cu_2nd_sem_without_evaluation'],
-                s['unemployment_rate'], s['inflation_rate'], s['gdp']
-            )
+        result = []
+        for row in rows:
+            result.append({
+                "id": row["student_id"],
+                "course": COURSE_INV.get(int(row["course"]), "Unknown Course"),
+                "age_at_enrollment": row["age_at_enrollment"],
+                "gender": "Male" if row["gender"] == 1 else "Female",
+                "debtor": "Yes" if row["debtor"] == 1 else "No",
+                "scholarship_holder": "Yes" if row["scholarship_holder"] == 1 else "No",
+                "dropout_risk_percent": round(float(row["target"]), 1),   # already saved by Prefect
+            })
 
-            X = np.array(features).reshape(1, -1)
-            X_scaled = scaler.transform(X)
-            risk_proba = model.predict_proba(X_scaled)[0, 1]
-            risk_percent = round(risk_proba * 100, 1)
-
-            if risk_percent > 50:
-                high_risk_list.append({
-                    "id": s['student_id'],  
-                    "course": COURSE_INV.get(int(s['course']), f"Code {s['course']}"),
-                    "age_at_enrollment": s['age_at_enrollment'],
-                    "gender": "Male" if s['gender'] == 1 else "Female",   # Fixed: was string before
-                    "debtor": "Yes" if s['debtor'] == 1 else "No",       # Fixed: was string before
-                    "scholarship_holder": "Yes" if s['scholarship_holder'] == 1 else "No",
-                    "dropout_risk_percent": risk_percent,
-                    "predicted_class": int(model.predict(X_scaled)[0])
-                })
-
-        high_risk_list.sort(key=lambda x: x["dropout_risk_percent"], reverse=True)
-        return high_risk_list
+        return result
 
     except Exception as e:
-        print("Error in high_risk_students:", e)
+        print("Error:", e)
         raise HTTPException(status_code=500, detail="Failed to load high-risk students")
     finally:
-        if cursor:
-            cursor.close()
-        if db:
-            db.close()
+        if cursor: cursor.close()
+        if db: db.close()
+
 @app.post("/predict_live")
 def predict_live(data: dict):
     try:
