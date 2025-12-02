@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dropout Risk System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .tab-active { @apply bg-indigo-600 text-white; }
+    .tab-inactive { @apply bg-gray-200 text-gray-700 hover:bg-gray-300; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-indigo-50 min-h-screen">
+  <div class="max-w-7xl mx-auto p-6">
+    <div class="text-center mb-10">
+      <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+        Student Dropout Risk System
+      </h1>
+      <p class="text-xl text-gray-600 mt-3">Real-time Prediction & Risk Monitoring</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex justify-center mb-10">
+      <div class="bg-white rounded-xl shadow-lg p-1 flex gap-2">
+        <button id="tab-add" class="px-10 py-4 rounded-lg font-bold text-lg transition tab-active">Add New Student</button>
+        <button id="tab-risk" class="px-10 py-4 rounded-lg font-bold text-lg transition tab-inactive">Highest Risk Students</button>
+      </div>
+    </div>
+
+    <!-- Add Student Panel -->
+    <div id="panel-add" class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-700 px-10 py-8">
+        <h2 class="text-3xl font-bold text-white text-center">Add New Student Record</h2>
+      </div>
+
+      <div class="p-10 pb-16">
+        
+
+        <form id="studentForm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- ALL FIELDS WITH oninput -->
+          <div><label>Marital Status</label><select name="marital_status" required oninput="predictLiveRisk()"><option value="Single">Single</option><option value="Married">Married</option><option value="Widower">Widower</option><option value="Divorced">Divorced</option><option value="Facto union">Facto union</option><option value="Legally separated">Legally separated</option></select></div>
+          <div><label>Application Mode</label><select name="application_mode" required oninput="predictLiveRisk()"><option>1st phase — general contingent</option><option>Ordinance No. 612/93</option><option>Over 23 years old</option><option>International student (bachelor)</option><option>Transfer</option><option>Change in course</option><option>Technological specialization diploma holders</option></select></div>
+          <div><label>Application Order</label><input type="number" name="application_order" value="1" min="1" max="9" required oninput="predictLiveRisk()"/></div>
+          <div><label>Course</label><select name="course" required oninput="predictLiveRisk()"><option>Nursing</option><option>Informatics Engineering</option><option>Management</option><option>Management (evening attendance)</option><option>Journalism and Communication</option><option>Biofuel Production Technologies</option><option>Animation and Multimedia Design</option><option>Veterinary Nursing</option><option>Tourism</option><option>Oral Hygiene</option></select></div>
+          <div><label>Attendance Regime</label><select name="attendance_regime" required oninput="predictLiveRisk()"><option value="Daytime">Daytime</option><option value="Evening">Evening</option></select></div>
+          <div><label>Previous Qualification</label><select name="previous_qualification" required oninput="predictLiveRisk()"><option>Secondary education</option><option>Over 23 years old</option><option>Higher education — bachelor's degree</option><option>Technological specialization course</option></select></div>
+          <div><label>Nationality</label><select name="nationality" required oninput="predictLiveRisk()"><option>Portuguese</option><option>Brazilian</option><option>Angolan</option><option>Spanish</option><option>German</option><option>Ukrainian</option><option>CapeVerdean</option></select></div>
+          <div><label>Mother's Qualification</label><select name="mother_qualification" required oninput="predictLiveRisk()"><option>Secondary Education</option><option>Basic Education 3rd Cycle</option><option>Basic education 1st cycle</option><option>Unknown</option><option>Cannot read or write</option></select></div>
+          <div><label>Father's Qualification</label><select name="father_qualification" required oninput="predictLiveRisk()"><option>Secondary Education</option><option>Basic Education 3rd Cycle</option><option>Basic education 1st cycle</option><option>Unknown</option></select></div>
+          <div><label>Mother's Occupation</label><select name="mother_occupation" oninput="predictLiveRisk()"><option>Administrative</option><option>Student</option><option>Unskilled workers</option><option>Services/Security/Sales</option></select></div>
+          <div><label>Father's Occupation</label><select name="father_occupation" oninput="predictLiveRisk()"><option>Construction/Industry</option><option>Administrative</option><option>Unskilled workers</option><option>Technician</option></select></div>
+          <div><label>Displaced</label><select name="displaced" oninput="predictLiveRisk()"><option>Yes</option><option>No</option></select></div>
+          <div><label>Educational Special Needs</label><select name="educational_special_needs" oninput="predictLiveRisk()"><option>No</option><option>Yes</option></select></div>
+          <div><label>Debtor</label><select name="debtor" oninput="predictLiveRisk()"><option>No</option><option>Yes</option></select></div>
+          <div><label>Tuition Fees Up to Date</label><select name="tuition_fees_up_to_date" oninput="predictLiveRisk()"><option>Yes</option><option>No</option></select></div>
+          <div><label>Gender</label><select name="gender" required oninput="predictLiveRisk()"><option>Female</option><option>Male</option></select></div>
+          <div><label>Scholarship Holder</label><select name="scholarship_holder" oninput="predictLiveRisk()"><option>No</option><option>Yes</option></select></div>
+          <div><label>International</label><select name="international" oninput="predictLiveRisk()"><option>No</option><option>Yes</option></select></div>
+          <div><label>Age at Enrollment</label><input type="number" name="age_at_enrollment" value="19" min="17" max="70" required oninput="predictLiveRisk()"/></div>
+
+          <!-- Academic Metrics -->
+          <div class="col-span-full bg-gray-50 rounded-2xl p-6 shadow-inner">
+            <h3 class="text-lg font-bold text-indigo-700 mb-6">Academic & Economic Metrics</h3>
+            <div class="grid grid-cols-3 gap-4">
+              <div><label class="text-xs text-gray-500">1st Sem Credited</label><input type="number" name="cu_1st_sem_credited" value="0" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">1st Sem Enrolled</label><input type="number" name="cu_1st_sem_enrolled" value="6" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">1st Sem Evaluations</label><input type="number" name="cu_1st_sem_evaluations" value="8" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">1st Sem Approved</label><input type="number" name="cu_1st_sem_approved" value="6" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">1st Sem Grade</label><input type="number" step="0.1" name="cu_1st_sem_grade" value="14.5" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">1st Sem Without Eval</label><input type="number" name="cu_1st_sem_without_evaluation" value="0" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">2nd Sem Credited</label><input type="number" name="cu_2nd_sem_credited" value="0" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">2nd Sem Enrolled</label><input type="number" name="cu_2nd_sem_enrolled" value="6" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">2nd Sem Evaluations</label><input type="number" name="cu_2nd_sem_evaluations" value="7" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">2nd Sem Approved</label><input type="number" name="cu_2nd_sem_approved" value="6" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">2nd Sem Grade</label><input type="number" step="0.1" name="cu_2nd_sem_grade" value="15.0" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">2nd Sem Without Eval</label><input type="number" name="cu_2nd_sem_without_evaluation" value="0" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">Unemployment Rate</label><input type="number" step="0.1" name="unemployment_rate" value="7.6" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">Inflation Rate</label><input type="number" step="0.1" name="inflation_rate" value="2.1" oninput="predictLiveRisk()"/></div>
+              <div><label class="text-xs text-gray-500">GDP</label><input type="number" step="0.01" name="gdp" value="1.74" oninput="predictLiveRisk()"/></div>
+            </div>
+          </div>
+        </form>
+
+        <div class="text-center mt-16">
+          <button onclick="submitForm()" class="bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white font-bold text-2xl py-6 px-16 rounded-2xl shadow-2xl transform hover:scale-105 transition uppercase tracking-wider">
+            Predict Risk & Save Student
+          </button>
+        </div>
+        <div id="message" class="mt-12 text-center text-3xl font-bold"></div>
+      </div>
+    </div>
+
+    <!-- High Risk Panel -->
+    <div id="panel-risk" class="hidden mt-10">
+      <!-- Stats Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+        <div class="bg-white rounded-2xl p-6 shadow-lg text-center"><div class="text-4xl font-bold text-indigo-600" id="totalStudents">0</div><div class="text-sm text-gray-600">Total Students</div></div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg text-center"><div class="text-4xl font-bold text-red-600" id="atRiskCount">0</div><div class="text-sm text-gray-600">At Risk (>50%)</div></div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg text-center"><div class="text-4xl font-bold text-orange-600" id="avgRisk">0%</div><div class="text-sm text-gray-600">Average Risk</div></div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg text-center"><div class="text-4xl font-bold text-purple-600" id="topCourse">-</div><div class="text-sm text-gray-600">Top Risk Course</div></div>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-2xl p-8">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+          <h2 class="text-3xl font-bold text-red-700">Highest Risk Students</h2>
+          <div class="flex gap-3">
+            <input type="text" id="searchInput" placeholder="Search by ID or Course..." class="px-5 py-3 border rounded-xl focus:ring-4 focus:ring-red-200 outline-none">
+            <button onclick="loadRiskDashboard()" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-xl">Refresh</button>
+            <button onclick="exportToCSV()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-xl">Export CSV</button>
+          </div>
+        </div>
+        <div id="risk-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-screen overflow-y-auto p-10">
+      <div class="flex justify-between items-center mb-8">
+        <h3 class="text-3xl font-bold" id="modalTitle">Student Details</h3>
+        <button onclick="document.getElementById('detailModal').classList.add('hidden')" class="text-4xl text-gray-500 hover:text-gray-800">&times;</button>
+      </div>
+      <div id="modalContent" class="grid grid-cols-2 gap-6 text-lg"></div>
+    </div>
+  </div>
+
+  <script>
+    let allHighRisk = [];
+
+    
+    // Submit
+    async function submitForm() {
+  const f = document.forms.studentForm;
+  
+  // Build the exact same payload your backend expects
+  const data = {
+    marital_status: f.marital_status.value,
+    application_mode: f.application_mode.value,
+    application_order: parseInt(f.application_order.value) || 0,
+    course: f.course.value,
+    attendance_regime: f.attendance_regime.value,
+    previous_qualification: f.previous_qualification.value,
+    nationality: f.nationality.value,
+    mother_qualification: f.mother_qualification.value,
+    father_qualification: f.father_qualification.value,
+    mother_occupation: f.mother_occupation.value || "Student",
+    father_occupation: f.father_occupation.value || "Unskilled workers",
+    displaced: f.displaced.value,
+    educational_special_needs: f.educational_special_needs.value,
+    debtor: f.debtor.value,
+    tuition_fees_up_to_date: f.tuition_fees_up_to_date.value,
+    gender: f.gender.value,
+    scholarship_holder: f.scholarship_holder.value,
+    age_at_enrollment: parseInt(f.age_at_enrollment.value) || 19,
+    international: f.international.value,
+
+    // Academic fields
+    cu_1st_sem_credited: parseInt(f.cu_1st_sem_credited.value) || 0,
+    cu_1st_sem_enrolled: parseInt(f.cu_1st_sem_enrolled.value) || 0,
+    cu_1st_sem_evaluations: parseInt(f.cu_1st_sem_evaluations.value) || 0,
+    cu_1st_sem_approved: parseInt(f.cu_1st_sem_approved.value) || 0,
+    cu_1st_sem_grade: parseFloat(f.cu_1st_sem_grade.value) || 0,
+    cu_1st_sem_without_evaluation: parseInt(f.cu_1st_sem_without_evaluation.value) || 0,
+
+    cu_2nd_sem_credited: parseInt(f.cu_2nd_sem_credited.value) || 0,
+    cu_2nd_sem_enrolled: parseInt(f.cu_2nd_sem_enrolled.value) || 0,
+    cu_2nd_sem_evaluations: parseInt(f.cu_2nd_sem_evaluations.value) || 0,
+    cu_2nd_sem_approved: parseInt(f.cu_2nd_sem_approved.value) || 0,
+    cu_2nd_sem_grade: parseFloat(f.cu_2nd_sem_grade.value) || 0,
+    cu_2nd_sem_without_evaluation: parseInt(f.cu_2nd_sem_without_evaluation.value) || 0,
+
+    unemployment_rate: parseFloat(f.unemployment_rate.value) || 0,
+    inflation_rate: parseFloat(f.inflation_rate.value) || 0,
+    gdp: parseFloat(f.gdp.value) || 0
+  };
+
+  const msg = document.getElementById("message");
+  msg.innerHTML = `<span class="text-indigo-600">Saving student & calculating risk...</span>`;
+
+  try {
+    const res = await fetch("http://127.0.0.1:8000/add_student", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const json = await res.json();
+
+    if (res.ok) {
+      const risk = json.dropout_risk_percent?.toFixed(1) || "N/A";
+      const studentId = json.student_id || json.inserted_id || "Unknown";
+
+      msg.innerHTML = `
+        <div class="p-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl shadow-lg border border-green-200">
+          <p class="text-6xl font-bold text-green-600 mb-4">${risk}%</p>
+          <p class="text-2xl">Student successfully saved!</p>
+          <p class="text-xl mt-2">ID: <strong>#${studentId}</strong></p>
+        </div>`;
+
+      // Reset form but keep default values
+      f.reset();
+      f.age_at_enrollment.value = 19;
+      f.application_order.value = 1;
+      f.cu_1st_sem_enrolled.value = 6;
+      f.cu_2nd_sem_enrolled.value = 6;
+    } else {
+      msg.innerHTML = `<span class="text-red-600">Error: ${json.detail || "Unknown error"}</span>`;
+    }
+  } catch (err) {
+    msg.innerHTML = `<span class="text-red-600">Connection failed — Is the backend running?</span>`;
+  }
+}
+
+    // Load High Risk
+    async function loadRiskDashboard() {
+      const container = document.getElementById("risk-content");
+      container.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500">Loading...</div>`;
+      try {
+        const res = await fetch("http://127.0.0.1:8000/high_risk_students");
+        allHighRisk = await res.json();
+        updateStats();
+        renderCards(allHighRisk);
+      } catch(e) {
+        container.innerHTML = `<div class="col-span-full text-red-600 py-20 text-center">API Error</div>`;
+      }
+    }
+
+    function updateStats() {
+      const total = allHighRisk.length;
+      const avg = total ? Math.round(allHighRisk.reduce((a,b)=>a+b.dropout_risk_percent,0)/total) : 0;
+      const topCourse = allHighRisk.reduce((a,b) => a.course === b.course ? a : b.course, allHighRisk[0])?.course || "-";
+      document.getElementById("totalStudents").textContent = total;
+      document.getElementById("atRiskCount").textContent = total;
+      document.getElementById("avgRisk").textContent = avg + "%";
+      document.getElementById("topCourse").textContent = topCourse;
+    }
+
+    function renderCards(data) {
+      const term = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = data.filter(s => s.id.toString().includes(term) || s.course.toLowerCase().includes(term));
+      document.getElementById("risk-content").innerHTML = filtered.map(s => `
+        <div onclick="showDetail(${s.id})" class="cursor-pointer bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-6 shadow-xl border-2 border-red-200 hover:scale-105 transition">
+          <div class="text-5xl font-bold text-red-600">${s.dropout_risk_percent.toFixed(1)}%</div>
+          <p class="text-lg font-bold">#${s.id}</p>
+          <p class="text-gray-700">${s.course}</p>
+          <p class="text-sm text-gray-600">Age ${s.age_at_enrollment} • ${s.gender}</p>
+          <p class="text-sm ${s.debtor==='Yes'?'text-red-600 font-bold':''}">Debtor: ${s.debtor}</p>
+        </div>
+      `).join('') || `<div class="col-span-full text-center py-20 text-gray-500">No results</div>`;
+    }
+
+    document.getElementById("searchInput").addEventListener("input", () => renderCards(allHighRisk));
+
+    function exportToCSV() {
+      if (!allHighRisk.length) return alert("No data");
+      let csv = "ID,Course,Risk %,Age,Gender,Debtor\n";
+      allHighRisk.forEach(s => csv += `${s.id},${s.course},${s.dropout_risk_percent},${s.age_at_enrollment},${s.gender},${s.debtor}\n`);
+      const blob = new Blob([csv], {type: 'text/csv'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = "high_risk_students.csv"; a.click();
+    }
+
+    function showDetail(id) {
+      const s = allHighRisk.find(x => x.id === id);
+      document.getElementById("modalTitle").textContent = `Student #${id} - ${s.course}`;
+      document.getElementById("modalContent").innerHTML = Object.entries(s).map(([k,v]) => 
+        `<div><strong>${k.replace(/_/g,' ').replace(/\b\w/g,l=>l.toUpperCase())}:</strong> ${v}</div>`
+      ).join('');
+      document.getElementById("detailModal").classList.remove("hidden");
+    }
+
+    // Tab switching
+    document.getElementById("tab-add").onclick = () => { switchTab("add"); }
+    document.getElementById("tab-risk").onclick = () => { switchTab("risk"); loadRiskDashboard(); };
+    function switchTab(active) {
+      document.querySelectorAll("#tab-add,#tab-risk").forEach(t => {
+        t.classList.toggle("tab-active", t.id === `tab-${active}`);
+        t.classList.toggle("tab-inactive", t.id !== `tab-${active}`);
+      });
+      document.getElementById("panel-add").classList.toggle("hidden", active !== "add");
+      document.getElementById("panel-risk").classList.toggle("hidden", active !== "risk");
+    }
+
+    // Initialize
+    predictLiveRisk();
+  </script>
+</body>
+</html>
