@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Load CSV
-df = pd.read_csv(r"F:\Big_Data\project\NHA-190\data\dataset_half2.csv")
+df = pd.read_csv(r"F:\Big_Data\project\NHA-190\data\dataset_half1.csv")
 
 # Rename columns to match MySQL table
 df.rename(columns={
@@ -47,4 +47,4 @@ df.rename(columns={
 engine = create_engine("mysql+pymysql://root:1234@localhost/student_db")
 
 # Insert into table
-df.to_sql('student_data', con=engine, if_exists='append', index=False)
+df.to_sql('student_training_data', con=engine, if_exists='append', index=False)

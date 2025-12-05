@@ -1,0 +1,370 @@
+2025-12-05 00:46:33 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 00:46:41 | INFO | {"timestamp": "2025-12-05T00:46:40.650866", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 397.87}
+2025-12-05 00:46:46 | INFO | {"timestamp": "2025-12-05T00:46:45.764221", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 337.73}
+2025-12-05 00:46:47 | INFO | {"timestamp": "2025-12-05T00:46:47.450111", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 500, "duration_ms": 13.62}
+2025-12-05 00:46:51 | INFO | {"timestamp": "2025-12-05T00:46:51.557158", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 351.59}
+2025-12-05 00:46:54 | INFO | {"timestamp": "2025-12-05T00:46:54.838477", "ip": "127.0.0.1", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 0.0}
+2025-12-05 00:46:55 | INFO | {"timestamp": "2025-12-05T00:46:54.840477", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 200, "duration_ms": 180.0}
+2025-12-05 00:46:58 | INFO | {"timestamp": "2025-12-05T00:46:58.126171", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 00:46:58 | INFO | {"timestamp": "2025-12-05T00:46:58.275767", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 17.01}
+2025-12-05 00:47:03 | INFO | {"timestamp": "2025-12-05T00:47:03.129503", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 341.79}
+2025-12-05 00:47:12 | INFO | {"timestamp": "2025-12-05T00:47:12.338395", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 400, "duration_ms": 2.0}
+2025-12-05 00:47:21 | INFO | {"timestamp": "2025-12-05T00:47:21.386527", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 199.2}
+2025-12-05 00:47:24 | INFO | {"timestamp": "2025-12-05T00:47:24.320557", "ip": "127.0.0.1", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 0.0}
+2025-12-05 00:47:24 | INFO | {"timestamp": "2025-12-05T00:47:24.322561", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 200, "duration_ms": 178.57}
+2025-12-05 00:47:52 | INFO | {"timestamp": "2025-12-05T00:47:52.497074", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 500, "duration_ms": 15.99}
+2025-12-05 00:48:13 | INFO | {"timestamp": "2025-12-05T00:48:13.149086", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 500, "duration_ms": 14.52}
+2025-12-05 00:48:14 | INFO | {"timestamp": "2025-12-05T00:48:14.690835", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 201.12}
+2025-12-05 00:48:16 | INFO | {"timestamp": "2025-12-05T00:48:15.997122", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 198.17}
+2025-12-05 00:48:17 | INFO | {"timestamp": "2025-12-05T00:48:17.668386", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 500, "duration_ms": 14.1}
+2025-12-05 00:48:20 | INFO | {"timestamp": "2025-12-05T00:48:20.434746", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 500, "duration_ms": 15.05}
+2025-12-05 00:48:22 | INFO | {"timestamp": "2025-12-05T00:48:21.682422", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 336.0}
+2025-12-05 00:48:24 | INFO | {"timestamp": "2025-12-05T00:48:23.939123", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 201.22}
+2025-12-05 00:51:54 | INFO | {"timestamp": "2025-12-05T00:51:54.311405", "ip": "127.0.0.1", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 0.0}
+2025-12-05 00:51:54 | INFO | {"timestamp": "2025-12-05T00:51:54.312405", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 200, "duration_ms": 175.2}
+2025-12-05 00:51:57 | INFO | {"timestamp": "2025-12-05T00:51:57.430835", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 198.32}
+2025-12-05 00:51:59 | INFO | {"timestamp": "2025-12-05T00:51:59.587305", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 211.41}
+2025-12-05 00:52:46 | INFO | {"timestamp": "2025-12-05T00:52:46.710814", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 208.5}
+2025-12-05 00:52:48 | INFO | {"timestamp": "2025-12-05T00:52:48.311114", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 347.39}
+2025-12-05 00:52:51 | INFO | {"timestamp": "2025-12-05T00:52:51.555363", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 340.67}
+2025-12-05 00:52:53 | INFO | {"timestamp": "2025-12-05T00:52:53.651080", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 500, "duration_ms": 16.0}
+2025-12-05 00:52:54 | INFO | {"timestamp": "2025-12-05T00:52:54.974787", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 500, "duration_ms": 15.03}
+2025-12-05 00:52:55 | INFO | {"timestamp": "2025-12-05T00:52:55.979355", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 500, "duration_ms": 15.02}
+2025-12-05 00:54:49 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 00:55:13 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 00:55:15 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 00:55:36 | INFO | {"timestamp": "2025-12-05T00:55:36.447704", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 13.0}
+2025-12-05 00:55:47 | INFO | {"timestamp": "2025-12-05T00:55:47.515827", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 395.53}
+2025-12-05 00:55:48 | INFO | {"timestamp": "2025-12-05T00:55:48.261818", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 194.44}
+2025-12-05 00:55:52 | INFO | {"timestamp": "2025-12-05T00:55:52.979385", "ip": "127.0.0.1", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 0.0}
+2025-12-05 00:55:53 | INFO | {"timestamp": "2025-12-05T00:55:52.981383", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 200, "duration_ms": 182.0}
+2025-12-05 01:31:42 | INFO | {"timestamp": "2025-12-05T01:31:42.506529", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 1.0}
+2025-12-05 01:36:02 | INFO | {"timestamp": "2025-12-05T01:36:01.932110", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 217.14}
+2025-12-05 01:36:03 | INFO | {"timestamp": "2025-12-05T01:36:03.241794", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 336.17}
+2025-12-05 01:37:57 | INFO | {"timestamp": "2025-12-05T01:37:57.068757", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 195.82}
+2025-12-05 01:38:00 | INFO | {"timestamp": "2025-12-05T01:38:00.025219", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 337.18}
+2025-12-05 01:38:50 | INFO | {"timestamp": "2025-12-05T01:38:50.688585", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 198.15}
+2025-12-05 01:41:11 | INFO | {"timestamp": "2025-12-05T01:41:11.150639", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 196.73}
+2025-12-05 01:41:14 | INFO | {"timestamp": "2025-12-05T01:41:13.865893", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 325.82}
+2025-12-05 01:41:18 | INFO | {"timestamp": "2025-12-05T01:41:17.793063", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 330.64}
+2025-12-05 01:42:19 | INFO | {"timestamp": "2025-12-05T01:42:19.445569", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 358.3}
+2025-12-05 01:46:53 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 01:47:19 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 01:47:20 | ERROR | Form data requires "python-multipart" to be installed. It seems you installed "multipart" instead. 
+You can remove "multipart" with: 
+
+pip uninstall multipart
+
+And then install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-12-05 01:48:05 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 01:48:39 | INFO | {"timestamp": "2025-12-05T01:48:39.555657", "ip": "127.0.0.1", "method": "POST", "endpoint": "/upload_csv", "status": 400, "duration_ms": 10.51}
+2025-12-05 01:48:53 | INFO | {"timestamp": "2025-12-05T01:48:53.149797", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 01:48:53 | INFO | {"timestamp": "2025-12-05T01:48:53.248083", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 65.98}
+2025-12-05 01:49:01 | INFO | {"timestamp": "2025-12-05T01:49:01.928216", "ip": "127.0.0.1", "method": "POST", "endpoint": "/upload_csv", "status": 400, "duration_ms": 7.02}
+2025-12-05 01:51:15 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 01:51:16 | INFO | {"timestamp": "2025-12-05T01:51:16.085569", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 01:51:16 | INFO | {"timestamp": "2025-12-05T01:51:16.176125", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 67.53}
+2025-12-05 01:51:29 | INFO | {"timestamp": "2025-12-05T01:51:29.615698", "ip": "127.0.0.1", "method": "POST", "endpoint": "/upload_csv", "status": 400, "duration_ms": 22.01}
+2025-12-05 02:05:17 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:05:25 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:06:43 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:06:46 | INFO | {"timestamp": "2025-12-05T02:06:46.857351", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 02:06:46 | INFO | {"timestamp": "2025-12-05T02:06:46.967628", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 15.82}
+2025-12-05 02:06:54 | INFO | {"timestamp": "2025-12-05T02:06:54.344781", "ip": "127.0.0.1", "method": "POST", "endpoint": "/upload_csv", "status": 500, "duration_ms": 29.98}
+2025-12-05 02:07:23 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:07:40 | INFO | {"timestamp": "2025-12-05T02:07:39.426896", "ip": "127.0.0.1", "method": "POST", "endpoint": "/upload_csv", "status": 500, "duration_ms": 629.92}
+2025-12-05 02:08:28 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:08:37 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:08:38 | INFO | {"timestamp": "2025-12-05T02:08:38.538898", "ip": "127.0.0.1", "method": "POST", "endpoint": "/upload_csv", "status": 200, "duration_ms": 258.17}
+2025-12-05 02:09:05 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:09:44 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:09:50 | INFO | {"timestamp": "2025-12-05T02:09:50.571372", "ip": "127.0.0.1", "method": "POST", "endpoint": "/upload_csv", "status": 200, "duration_ms": 290.38}
+2025-12-05 02:09:59 | INFO | {"timestamp": "2025-12-05T02:09:59.115370", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 186.05}
+2025-12-05 02:10:01 | INFO | {"timestamp": "2025-12-05T02:10:01.582547", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 182.47}
+2025-12-05 02:10:02 | INFO | {"timestamp": "2025-12-05T02:10:02.594501", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 176.39}
+2025-12-05 02:10:02 | INFO | {"timestamp": "2025-12-05T02:10:02.796407", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 179.56}
+2025-12-05 02:10:03 | INFO | {"timestamp": "2025-12-05T02:10:03.010212", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 173.06}
+2025-12-05 02:10:04 | INFO | {"timestamp": "2025-12-05T02:10:03.857688", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 175.05}
+2025-12-05 02:10:37 | INFO | {"timestamp": "2025-12-05T02:10:37.607233", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 171.56}
+2025-12-05 02:22:00 | INFO | {"timestamp": "2025-12-05T02:22:00.633351", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 181.43}
+2025-12-05 02:39:43 | INFO | {"timestamp": "2025-12-05T02:39:43.710819", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 1.01}
+2025-12-05 02:39:43 | INFO | {"timestamp": "2025-12-05T02:39:43.823840", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 33.03}
+2025-12-05 02:40:35 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:50:50 | INFO | {"timestamp": "2025-12-05T02:50:50.862621", "ip": "197.52.138.179", "method": "GET", "endpoint": "/", "status": 404, "duration_ms": 1.0}
+2025-12-05 02:50:51 | INFO | {"timestamp": "2025-12-05T02:50:51.029564", "ip": "197.52.138.179", "method": "GET", "endpoint": "/favicon.ico", "status": 404, "duration_ms": 0.0}
+2025-12-05 02:50:59 | INFO | {"timestamp": "2025-12-05T02:50:59.026342", "ip": "197.52.138.179", "method": "GET", "endpoint": "/DOCS", "status": 404, "duration_ms": 0.0}
+2025-12-05 02:51:19 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 02:51:59 | INFO | {"timestamp": "2025-12-05T02:51:59.269054", "ip": "197.52.138.179", "method": "GET", "endpoint": "/", "status": 404, "duration_ms": 0.0}
+2025-12-05 02:52:03 | INFO | {"timestamp": "2025-12-05T02:52:03.154916", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 02:52:03 | INFO | {"timestamp": "2025-12-05T02:52:03.870984", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 16.12}
+2025-12-05 02:58:44 | INFO | {"timestamp": "2025-12-05T02:58:44.696373", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 02:58:44 | INFO | {"timestamp": "2025-12-05T02:58:44.819687", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 1.0}
+2025-12-05 02:58:50 | INFO | {"timestamp": "2025-12-05T02:58:50.093943", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 251.22}
+2025-12-05 02:58:58 | INFO | {"timestamp": "2025-12-05T02:58:58.081746", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 237.73}
+2025-12-05 02:59:15 | INFO | {"timestamp": "2025-12-05T02:59:15.055814", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 14.0}
+2025-12-05 02:59:18 | INFO | {"timestamp": "2025-12-05T02:59:18.445913", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 182.66}
+2025-12-05 02:59:19 | INFO | {"timestamp": "2025-12-05T02:59:19.103031", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 205.16}
+2025-12-05 03:09:29 | INFO | {"timestamp": "2025-12-05T03:09:29.478457", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:09:29 | INFO | {"timestamp": "2025-12-05T03:09:29.718328", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:13:29 | INFO | {"timestamp": "2025-12-05T03:13:29.554677", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:13:29 | INFO | {"timestamp": "2025-12-05T03:13:29.788425", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:16:31 | INFO | {"timestamp": "2025-12-05T03:16:31.452714", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:16:31 | INFO | {"timestamp": "2025-12-05T03:16:31.621924", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:16:31 | INFO | {"timestamp": "2025-12-05T03:16:31.953738", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:16:32 | INFO | {"timestamp": "2025-12-05T03:16:32.122239", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:16:32 | INFO | {"timestamp": "2025-12-05T03:16:32.443958", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:16:32 | INFO | {"timestamp": "2025-12-05T03:16:32.582452", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:21:00 | INFO | {"timestamp": "2025-12-05T03:21:00.000069", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:21:00 | INFO | {"timestamp": "2025-12-05T03:21:00.268232", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 03:46:23 | INFO | {"timestamp": "2025-12-05T03:46:23.584495", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 199.85}
+2025-12-05 03:46:28 | INFO | {"timestamp": "2025-12-05T03:46:27.968384", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 185.81}
+2025-12-05 03:46:42 | INFO | {"timestamp": "2025-12-05T03:46:42.353779", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 12.0}
+2025-12-05 03:46:42 | INFO | {"timestamp": "2025-12-05T03:46:42.568997", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 10.0}
+2025-12-05 03:46:51 | INFO | {"timestamp": "2025-12-05T03:46:51.009583", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 178.77}
+2025-12-05 03:46:51 | INFO | {"timestamp": "2025-12-05T03:46:51.829875", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 11.0}
+2025-12-05 03:46:54 | INFO | {"timestamp": "2025-12-05T03:46:54.756923", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 196.61}
+2025-12-05 03:46:56 | INFO | {"timestamp": "2025-12-05T03:46:56.247546", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 11.0}
+2025-12-05 03:47:00 | INFO | {"timestamp": "2025-12-05T03:47:00.138678", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 198.63}
+2025-12-05 04:13:13 | INFO | {"timestamp": "2025-12-05T04:13:13.359829", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 04:13:13 | INFO | {"timestamp": "2025-12-05T04:13:13.666742", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 04:17:28 | INFO | {"timestamp": "2025-12-05T04:17:27.811635", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 198.42}
+2025-12-05 04:28:41 | INFO | {"timestamp": "2025-12-05T04:28:41.123997", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 203.0}
+2025-12-05 04:32:15 | INFO | {"timestamp": "2025-12-05T04:32:15.156156", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 176.23}
+2025-12-05 04:33:41 | INFO | {"timestamp": "2025-12-05T04:33:41.339566", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 535.78}
+2025-12-05 04:33:47 | INFO | {"timestamp": "2025-12-05T04:33:47.409579", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 205.91}
+2025-12-05 04:33:49 | INFO | {"timestamp": "2025-12-05T04:33:49.029095", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 349.58}
+2025-12-05 04:33:50 | INFO | {"timestamp": "2025-12-05T04:33:50.585473", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 327.77}
+2025-12-05 04:33:59 | INFO | {"timestamp": "2025-12-05T04:33:58.829180", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 334.52}
+2025-12-05 04:34:13 | INFO | {"timestamp": "2025-12-05T04:34:12.673559", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 352.52}
+2025-12-05 04:34:14 | INFO | {"timestamp": "2025-12-05T04:34:14.180434", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 204.21}
+2025-12-05 04:34:15 | INFO | {"timestamp": "2025-12-05T04:34:15.243850", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 325.66}
+2025-12-05 04:34:17 | INFO | {"timestamp": "2025-12-05T04:34:17.188544", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 342.56}
+2025-12-05 04:34:20 | INFO | {"timestamp": "2025-12-05T04:34:19.716897", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 353.99}
+2025-12-05 04:34:21 | INFO | {"timestamp": "2025-12-05T04:34:20.886437", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 326.75}
+2025-12-05 04:34:22 | INFO | {"timestamp": "2025-12-05T04:34:22.231606", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 197.98}
+2025-12-05 04:34:23 | INFO | {"timestamp": "2025-12-05T04:34:23.385774", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 316.42}
+2025-12-05 04:34:46 | INFO | {"timestamp": "2025-12-05T04:34:45.829008", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 360.0}
+2025-12-05 04:35:55 | INFO | {"timestamp": "2025-12-05T04:35:55.337878", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 338.1}
+2025-12-05 04:35:58 | INFO | {"timestamp": "2025-12-05T04:35:57.766405", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 325.56}
+2025-12-05 04:35:58 | INFO | {"timestamp": "2025-12-05T04:35:58.671271", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 200.03}
+2025-12-05 04:35:59 | INFO | {"timestamp": "2025-12-05T04:35:59.574312", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 320.73}
+2025-12-05 04:36:02 | INFO | {"timestamp": "2025-12-05T04:36:02.306795", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 346.64}
+2025-12-05 04:36:20 | INFO | {"timestamp": "2025-12-05T04:36:20.199776", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 12.0}
+2025-12-05 04:36:26 | INFO | {"timestamp": "2025-12-05T04:36:26.113182", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 341.11}
+2025-12-05 04:36:29 | INFO | {"timestamp": "2025-12-05T04:36:29.621016", "ip": "127.0.0.1", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 1.0}
+2025-12-05 04:36:29 | INFO | {"timestamp": "2025-12-05T04:36:29.624015", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 200, "duration_ms": 178.75}
+2025-12-05 04:36:32 | INFO | {"timestamp": "2025-12-05T04:36:31.861379", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 200.6}
+2025-12-05 04:36:48 | INFO | {"timestamp": "2025-12-05T04:36:48.634615", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 197.0}
+2025-12-05 04:37:37 | INFO | {"timestamp": "2025-12-05T04:37:36.933041", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 329.27}
+2025-12-05 04:40:09 | INFO | {"timestamp": "2025-12-05T04:40:09.541820", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 341.7}
+2025-12-05 04:42:38 | INFO | {"timestamp": "2025-12-05T04:42:38.503830", "ip": "197.52.138.179", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 04:42:38 | INFO | {"timestamp": "2025-12-05T04:42:38.765009", "ip": "197.52.138.179", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 04:42:49 | INFO | {"timestamp": "2025-12-05T04:42:49.903165", "ip": "197.52.138.179", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 1.03}
+2025-12-05 04:43:02 | INFO | {"timestamp": "2025-12-05T04:43:02.176330", "ip": "197.52.138.179", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 344.46}
+2025-12-05 04:44:55 | INFO | {"timestamp": "2025-12-05T04:44:55.701318", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 1.0}
+2025-12-05 04:44:55 | INFO | {"timestamp": "2025-12-05T04:44:55.812328", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 0.0}
+2025-12-05 04:45:04 | INFO | {"timestamp": "2025-12-05T04:45:04.141987", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 368.85}
+2025-12-05 04:45:38 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 04:45:43 | INFO | {"timestamp": "2025-12-05T04:45:43.806041", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 04:45:43 | INFO | {"timestamp": "2025-12-05T04:45:43.882657", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 16.0}
+2025-12-05 04:45:49 | INFO | {"timestamp": "2025-12-05T04:45:49.509293", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 397.59}
+2025-12-05 04:46:00 | INFO | {"timestamp": "2025-12-05T04:45:59.870860", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 377.86}
+2025-12-05 04:46:02 | INFO | {"timestamp": "2025-12-05T04:46:01.789360", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 378.11}
+2025-12-05 04:46:10 | INFO | {"timestamp": "2025-12-05T04:46:10.731772", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 197.29}
+2025-12-05 04:47:59 | INFO | {"timestamp": "2025-12-05T04:47:59.211804", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 368.25}
+2025-12-05 04:48:03 | INFO | {"timestamp": "2025-12-05T04:48:03.057606", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 370.28}
+2025-12-05 04:48:04 | INFO | {"timestamp": "2025-12-05T04:48:04.334871", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 364.57}
+2025-12-05 04:48:45 | INFO | {"timestamp": "2025-12-05T04:48:44.723900", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 380.31}
+2025-12-05 04:48:46 | INFO | {"timestamp": "2025-12-05T04:48:46.050174", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 370.86}
+2025-12-05 04:49:41 | INFO | {"timestamp": "2025-12-05T04:49:40.744924", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 379.74}
+2025-12-05 04:50:04 | INFO | {"timestamp": "2025-12-05T04:50:03.953588", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 413.99}
+2025-12-05 04:50:41 | INFO | {"timestamp": "2025-12-05T04:50:41.285379", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 443.85}
+2025-12-05 04:50:44 | INFO | {"timestamp": "2025-12-05T04:50:43.888270", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 406.62}
+2025-12-05 04:50:44 | INFO | {"timestamp": "2025-12-05T04:50:44.717660", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 199.36}
+2025-12-05 04:50:48 | INFO | {"timestamp": "2025-12-05T04:50:48.350874", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 12.0}
+2025-12-05 04:50:49 | INFO | {"timestamp": "2025-12-05T04:50:49.298589", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 360.2}
+2025-12-05 04:51:05 | INFO | {"timestamp": "2025-12-05T04:51:05.999096", "ip": "127.0.0.1", "method": "GET", "endpoint": "/upload_csv", "status": 405, "duration_ms": 0.0}
+2025-12-05 04:51:06 | INFO | {"timestamp": "2025-12-05T04:51:06.068328", "ip": "127.0.0.1", "method": "GET", "endpoint": "/favicon.ico", "status": 404, "duration_ms": 0.0}
+2025-12-05 04:53:03 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 04:53:07 | INFO | {"timestamp": "2025-12-05T04:53:07.246807", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 04:53:07 | INFO | {"timestamp": "2025-12-05T04:53:07.348318", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 16.0}
+2025-12-05 04:53:15 | INFO | {"timestamp": "2025-12-05T04:53:15.176839", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 308.64}
+2025-12-05 04:56:47 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 04:57:30 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 04:57:37 | INFO | {"timestamp": "2025-12-05T04:57:37.712554", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 04:57:37 | INFO | {"timestamp": "2025-12-05T04:57:37.859157", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 16.51}
+2025-12-05 04:57:42 | INFO | {"timestamp": "2025-12-05T04:57:42.154800", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 383.0}
+2025-12-05 04:58:13 | INFO | {"timestamp": "2025-12-05T04:58:13.370596", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 400.14}
+2025-12-05 04:58:48 | INFO | {"timestamp": "2025-12-05T04:58:47.867814", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 438.48}
+2025-12-05 04:58:50 | INFO | {"timestamp": "2025-12-05T04:58:50.047839", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 357.99}
+2025-12-05 04:59:24 | INFO | {"timestamp": "2025-12-05T04:59:24.015049", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 419.45}
+2025-12-05 05:00:04 | INFO | {"timestamp": "2025-12-05T05:00:04.289263", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 365.11}
+2025-12-05 05:00:05 | INFO | {"timestamp": "2025-12-05T05:00:05.496792", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 371.55}
+2025-12-05 05:00:06 | INFO | {"timestamp": "2025-12-05T05:00:06.222382", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 204.1}
+2025-12-05 05:00:07 | INFO | {"timestamp": "2025-12-05T05:00:07.052030", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 397.62}
+2025-12-05 05:00:08 | INFO | {"timestamp": "2025-12-05T05:00:08.429135", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 383.1}
+2025-12-05 05:00:09 | INFO | {"timestamp": "2025-12-05T05:00:09.633079", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 13.0}
+2025-12-05 05:02:14 | INFO | {"timestamp": "2025-12-05T05:02:13.961051", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 378.34}
+2025-12-05 05:03:42 | INFO | {"timestamp": "2025-12-05T05:03:42.509748", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 377.62}
+2025-12-05 05:05:52 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:05:58 | INFO | {"timestamp": "2025-12-05T05:05:58.808725", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 1.0}
+2025-12-05 05:05:58 | INFO | {"timestamp": "2025-12-05T05:05:58.967237", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 15.0}
+2025-12-05 05:06:04 | INFO | {"timestamp": "2025-12-05T05:06:03.624625", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 381.62}
+2025-12-05 05:06:10 | INFO | {"timestamp": "2025-12-05T05:06:09.704811", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 366.02}
+2025-12-05 05:06:15 | INFO | {"timestamp": "2025-12-05T05:06:14.729736", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 359.72}
+2025-12-05 05:06:15 | INFO | {"timestamp": "2025-12-05T05:06:15.560792", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 361.3}
+2025-12-05 05:06:16 | INFO | {"timestamp": "2025-12-05T05:06:15.924095", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 367.28}
+2025-12-05 05:06:16 | INFO | {"timestamp": "2025-12-05T05:06:16.292374", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 369.08}
+2025-12-05 05:06:21 | INFO | {"timestamp": "2025-12-05T05:06:21.236904", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 374.49}
+2025-12-05 05:08:13 | INFO | {"timestamp": "2025-12-05T05:08:13.030548", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 419.34}
+2025-12-05 05:08:32 | INFO | {"timestamp": "2025-12-05T05:08:32.174862", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 212.38}
+2025-12-05 05:08:36 | INFO | {"timestamp": "2025-12-05T05:08:36.013746", "ip": "127.0.0.1", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 1.0}
+2025-12-05 05:08:36 | INFO | {"timestamp": "2025-12-05T05:08:36.015757", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 200, "duration_ms": 175.22}
+2025-12-05 05:09:10 | INFO | {"timestamp": "2025-12-05T05:09:09.649268", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 401.8}
+2025-12-05 05:10:56 | INFO | {"timestamp": "2025-12-05T05:10:56.035749", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 387.98}
+2025-12-05 05:10:56 | INFO | {"timestamp": "2025-12-05T05:10:56.768069", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 14.01}
+2025-12-05 05:13:52 | INFO | {"timestamp": "2025-12-05T05:13:52.672117", "ip": "127.0.0.1", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 1.0}
+2025-12-05 05:13:52 | INFO | {"timestamp": "2025-12-05T05:13:52.674118", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 200, "duration_ms": 176.16}
+2025-12-05 05:13:55 | INFO | {"timestamp": "2025-12-05T05:13:55.321309", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 197.36}
+2025-12-05 05:14:02 | INFO | {"timestamp": "2025-12-05T05:14:01.781694", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 392.35}
+2025-12-05 05:14:14 | INFO | {"timestamp": "2025-12-05T05:14:14.459188", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 367.55}
+2025-12-05 05:14:15 | INFO | {"timestamp": "2025-12-05T05:14:15.947363", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 13.0}
+2025-12-05 05:14:17 | INFO | {"timestamp": "2025-12-05T05:14:17.447749", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 354.44}
+2025-12-05 05:22:21 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:22:32 | INFO | {"timestamp": "2025-12-05T05:22:31.867545", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 366.23}
+2025-12-05 05:22:35 | INFO | {"timestamp": "2025-12-05T05:22:34.988506", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 338.23}
+2025-12-05 05:22:36 | INFO | {"timestamp": "2025-12-05T05:22:36.412815", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 348.1}
+2025-12-05 05:24:35 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:24:43 | INFO | {"timestamp": "2025-12-05T05:24:43.423736", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 333.76}
+2025-12-05 05:24:46 | INFO | {"timestamp": "2025-12-05T05:24:45.865669", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 319.86}
+2025-12-05 05:25:07 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:25:14 | INFO | {"timestamp": "2025-12-05T05:25:14.320975", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 362.23}
+2025-12-05 05:25:37 | INFO | {"timestamp": "2025-12-05T05:25:37.499300", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 339.83}
+2025-12-05 05:25:47 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:25:50 | INFO | {"timestamp": "2025-12-05T05:25:50.361553", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 348.36}
+2025-12-05 05:25:53 | INFO | {"timestamp": "2025-12-05T05:25:53.151068", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 337.13}
+2025-12-05 05:25:54 | INFO | {"timestamp": "2025-12-05T05:25:54.302816", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 348.56}
+2025-12-05 05:25:55 | INFO | {"timestamp": "2025-12-05T05:25:54.759922", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 336.05}
+2025-12-05 05:26:40 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:26:47 | INFO | {"timestamp": "2025-12-05T05:26:47.131047", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 335.62}
+2025-12-05 05:26:48 | INFO | {"timestamp": "2025-12-05T05:26:48.517557", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 315.85}
+2025-12-05 05:27:51 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:27:54 | INFO | {"timestamp": "2025-12-05T05:27:54.309472", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 333.54}
+2025-12-05 05:28:28 | INFO | {"timestamp": "2025-12-05T05:28:27.967847", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 348.43}
+2025-12-05 05:28:37 | INFO | {"timestamp": "2025-12-05T05:28:37.165123", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 12.01}
+2025-12-05 05:28:45 | INFO | {"timestamp": "2025-12-05T05:28:44.917051", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 193.17}
+2025-12-05 05:28:46 | INFO | {"timestamp": "2025-12-05T05:28:46.556450", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 314.47}
+2025-12-05 05:28:54 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:28:56 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:34:14 | INFO | {"timestamp": "2025-12-05T05:34:14.355243", "ip": "127.0.0.1", "method": "OPTIONS", "endpoint": "/add_student", "status": 200, "duration_ms": 0.0}
+2025-12-05 05:34:14 | INFO | {"timestamp": "2025-12-05T05:34:14.357245", "ip": "127.0.0.1", "method": "POST", "endpoint": "/add_student", "status": 200, "duration_ms": 185.07}
+2025-12-05 05:34:16 | INFO | {"timestamp": "2025-12-05T05:34:16.139338", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 201.07}
+2025-12-05 05:34:18 | INFO | {"timestamp": "2025-12-05T05:34:18.468988", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 379.04}
+2025-12-05 05:34:27 | INFO | {"timestamp": "2025-12-05T05:34:26.921604", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 324.08}
+2025-12-05 05:34:28 | INFO | {"timestamp": "2025-12-05T05:34:27.972427", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 319.26}
+2025-12-05 05:35:02 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:35:05 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:35:28 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:35:30 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:35:36 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:35:45 | INFO | {"timestamp": "2025-12-05T05:35:45.217845", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 361.98}
+2025-12-05 05:35:46 | INFO | {"timestamp": "2025-12-05T05:35:46.601410", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 350.91}
+2025-12-05 05:35:52 | INFO | {"timestamp": "2025-12-05T05:35:51.724160", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 330.62}
+2025-12-05 05:35:57 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:36:03 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:36:07 | INFO | {"timestamp": "2025-12-05T05:36:07.365497", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 338.18}
+2025-12-05 05:36:13 | INFO | {"timestamp": "2025-12-05T05:36:13.211721", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 324.21}
+2025-12-05 05:36:14 | INFO | {"timestamp": "2025-12-05T05:36:14.603428", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 15.0}
+2025-12-05 05:36:17 | INFO | {"timestamp": "2025-12-05T05:36:17.461630", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 327.37}
+2025-12-05 05:36:18 | INFO | {"timestamp": "2025-12-05T05:36:17.791006", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 342.96}
+2025-12-05 05:36:18 | INFO | {"timestamp": "2025-12-05T05:36:18.509617", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 324.82}
+2025-12-05 05:36:47 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 05:39:17 | INFO | {"timestamp": "2025-12-05T05:39:17.590561", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 204.74}
+2025-12-05 05:44:14 | INFO | {"timestamp": "2025-12-05T05:44:14.456805", "ip": "127.0.0.1", "method": "GET", "endpoint": "/upload_csv", "status": 405, "duration_ms": 0.0}
+2025-12-05 05:44:14 | INFO | {"timestamp": "2025-12-05T05:44:14.506322", "ip": "127.0.0.1", "method": "GET", "endpoint": "/favicon.ico", "status": 404, "duration_ms": 0.0}
+2025-12-05 05:49:14 | INFO | {"timestamp": "2025-12-05T05:49:14.012661", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 201.77}
+2025-12-05 05:49:18 | INFO | {"timestamp": "2025-12-05T05:49:17.974301", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 352.04}
+2025-12-05 05:49:20 | INFO | {"timestamp": "2025-12-05T05:49:20.747775", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 16.0}
+2025-12-05 05:49:21 | INFO | {"timestamp": "2025-12-05T05:49:21.558259", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 326.83}
+2025-12-05 05:49:54 | INFO | {"timestamp": "2025-12-05T05:49:54.651803", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 199.07}
+2025-12-05 05:49:56 | INFO | {"timestamp": "2025-12-05T05:49:56.070701", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 328.7}
+2025-12-05 05:49:56 | INFO | {"timestamp": "2025-12-05T05:49:56.982222", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 12.53}
+2025-12-05 05:50:01 | INFO | {"timestamp": "2025-12-05T05:50:01.143752", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 314.37}
+2025-12-05 05:51:12 | INFO | {"timestamp": "2025-12-05T05:51:12.492484", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 320.26}
+2025-12-05 05:51:13 | INFO | {"timestamp": "2025-12-05T05:51:13.463507", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 322.23}
+2025-12-05 05:51:15 | INFO | {"timestamp": "2025-12-05T05:51:15.080520", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 333.53}
+2025-12-05 05:51:18 | INFO | {"timestamp": "2025-12-05T05:51:18.157621", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 324.24}
+2025-12-05 05:53:21 | INFO | {"timestamp": "2025-12-05T05:53:21.769098", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 198.18}
+2025-12-05 05:53:37 | INFO | {"timestamp": "2025-12-05T05:53:36.783654", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 332.27}
+2025-12-05 05:53:47 | INFO | {"timestamp": "2025-12-05T05:53:47.674883", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 323.72}
+2025-12-05 05:53:48 | INFO | {"timestamp": "2025-12-05T05:53:48.438710", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 16.61}
+2025-12-05 05:59:09 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:01:02 | ERROR | Form data requires "python-multipart" to be installed. It seems you installed "multipart" instead. 
+You can remove "multipart" with: 
+
+pip uninstall multipart
+
+And then install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-12-05 06:01:05 | INFO | {"timestamp": "2025-12-05T06:01:05.016898", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 1.0}
+2025-12-05 06:01:05 | INFO | {"timestamp": "2025-12-05T06:01:05.220026", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 18.58}
+2025-12-05 06:01:18 | INFO | {"timestamp": "2025-12-05T06:01:17.992670", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 500, "duration_ms": 364.85}
+2025-12-05 06:01:54 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:01:55 | ERROR | Form data requires "python-multipart" to be installed. It seems you installed "multipart" instead. 
+You can remove "multipart" with: 
+
+pip uninstall multipart
+
+And then install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-12-05 06:01:55 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:02:05 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:02:05 | ERROR | Form data requires "python-multipart" to be installed. It seems you installed "multipart" instead. 
+You can remove "multipart" with: 
+
+pip uninstall multipart
+
+And then install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-12-05 06:02:13 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:02:13 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:02:13 | ERROR | Form data requires "python-multipart" to be installed. It seems you installed "multipart" instead. 
+You can remove "multipart" with: 
+
+pip uninstall multipart
+
+And then install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-12-05 06:02:47 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:02:48 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:02:48 | ERROR | Form data requires "python-multipart" to be installed. It seems you installed "multipart" instead. 
+You can remove "multipart" with: 
+
+pip uninstall multipart
+
+And then install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-12-05 06:04:26 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:04:54 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:04:58 | INFO | {"timestamp": "2025-12-05T06:04:58.949438", "ip": "127.0.0.1", "method": "GET", "endpoint": "/docs", "status": 200, "duration_ms": 0.0}
+2025-12-05 06:04:59 | INFO | {"timestamp": "2025-12-05T06:04:59.068464", "ip": "127.0.0.1", "method": "GET", "endpoint": "/openapi.json", "status": 200, "duration_ms": 16.0}
+2025-12-05 06:05:05 | INFO | {"timestamp": "2025-12-05T06:05:05.557067", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 353.61}
+2025-12-05 06:05:15 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:05:15 | INFO | NumExpr defaulting to 16 threads.
+2025-12-05 06:05:20 | INFO | {"timestamp": "2025-12-05T06:05:20.031609", "ip": "127.0.0.1", "method": "GET", "endpoint": "/data_drift", "status": 200, "duration_ms": 435.67}
+2025-12-05 06:05:21 | INFO | {"timestamp": "2025-12-05T06:05:21.339794", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 210.17}
+2025-12-05 06:05:26 | INFO | {"timestamp": "2025-12-05T06:05:26.150004", "ip": "127.0.0.1", "method": "GET", "endpoint": "/logs", "status": 200, "duration_ms": 14.01}
+2025-12-05 06:05:27 | INFO | {"timestamp": "2025-12-05T06:05:27.443137", "ip": "127.0.0.1", "method": "GET", "endpoint": "/high_risk_students", "status": 200, "duration_ms": 201.88}

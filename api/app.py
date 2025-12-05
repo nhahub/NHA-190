@@ -17,6 +17,21 @@ COURSE_INV = {
     14: "Advertising and Marketing Management",
     16: "Basic Education"
 }
+import logging
+from datetime import datetime
+from fastapi import Request
+import json
+
+# Create a simple file logger
+logging.basicConfig(
+    filename="api_usage.log",
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+
+logger = logging.getLogger("api_logger")
+# ... rest of your imports
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import mysql.connector
@@ -40,6 +55,34 @@ app.add_middleware(
     allow_methods=["*"],           #     Allows POST, OPTIONS, etc.
     allow_headers=["*"],
 )
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start_time = datetime.now()
+    client_ip = request.client.host
+    method = request.method
+    path = request.url.path
+    
+    try:
+        response = await call_next(request)
+        status_code = response.status_code
+    except Exception as e:
+        status_code = 500
+        response = None
+
+    duration = (datetime.now() - start_time).total_seconds() * 1000  # ms
+
+    log_entry = {
+        "timestamp": start_time.isoformat(),
+        "ip": client_ip,
+        "method": method,
+        "endpoint": path,
+        "status": status_code,
+        "duration_ms": round(duration, 2)
+    }
+
+    logger.info(json.dumps(log_entry))
+    return response 
 # -------------------------------
 #  DICTIONARIES (mapping tables)
 # -------------------------------
@@ -396,4 +439,290 @@ def predict_live(data: dict):
         risk = model.predict_proba(features)[0][1] * 100
         return {"risk": round(risk, 1)}
     except:
-        return {"risk": 0}
+        return {"risk": 0}\
+        
+
+from fastapi import FastAPI, HTTPException
+from typing import Dict, Any
+import pandas as pd
+
+from fastapi import FastAPI, HTTPException
+from typing import Dict, Any, List
+import pandas as pd
+import numpy as np
+from scipy.stats import ks_2samp, chi2_contingency
+import warnings
+warnings.filterwarnings("ignore")
+
+def safe_chi2_test(series_ref: pd.Series, series_curr: pd.Series, min_obs: int = 10) -> float:
+    """
+    Safe chi-square test that never crashes.
+    Returns p-value (1.0 = no evidence of drift)
+    """
+    if len(series_ref) == 0 or len(series_curr) == 0:
+        return 1.0
+
+    # Combine and get all possible categories
+    combined = pd.concat([series_ref, series_curr], ignore_index=True)
+    if combined.nunique() < 2:
+        return 1.0  # only one category → no drift possible
+
+    # Create contingency table: rows = categories, columns = [ref, curr]
+    ref_counts = series_ref.value_counts()
+    curr_counts = series_curr.value_counts()
+    all_categories = ref_counts.index.union(curr_counts.index)
+
+    ref_counts = ref_counts.reindex(all_categories, fill_value=0)
+    curr_counts = curr_counts.reindex(all_categories, fill_value=0)
+
+    contingency = np.array([ref_counts.values, curr_counts.values])
+
+    # Safety checks
+    if contingency.size == 0:
+        return 1.0
+    if np.any(contingency < 0):
+        return 1.0
+    # If total observations too low → skip chi2 (avoid unreliable p-values)
+    if contingency.sum() < min_obs:
+        return 1.0
+    # If any expected frequency would be < 5 → use higher p-value (conservative)
+    row_sums = contingency.sum(axis=1)
+    col_sums = contingency.sum(axis=0)
+    total = contingency.sum()
+    expected = np.outer(row_sums, col_sums) / total
+    if np.any(expected < 5):
+        # Fall back to Fisher's exact if 2x2, otherwise be conservative
+        if contingency.shape == (2, 2):
+            from scipy.stats import fisher_exact
+            oddsratio, p = fisher_exact(contingency)
+            return p
+        else:
+            return 0.05  # borderline: flag as possible drift but don't crash
+
+    chi2, p, dof, _ = chi2_contingency(contingency, correction=True)
+    return p
+
+from fastapi.responses import JSONResponse
+import pandas as pd
+from scipy.stats import ks_2samp
+
+@app.get("/data_drift")
+def get_data_drift_report():
+    db = get_db()
+    cursor = db.cursor(dictionary=True)
+    try:
+        cursor.execute("SELECT * FROM student_training_data")
+        ref_rows = cursor.fetchall()
+        cursor.execute("SELECT * FROM student_data WHERE target IS NOT NULL")
+        curr_rows = cursor.fetchall()
+
+        ref_df = pd.DataFrame(ref_rows)
+        curr_df = pd.DataFrame(curr_rows)
+
+        if len(curr_df) < 20:
+            return JSONResponse(content={
+                "dataset_drift_detected": False,
+                "drift_share_percent": 0.0,
+                "drifted_features_count": 0,
+                "drifted_features": [],
+                "target_drift_p_value": 1.0000,
+                "recommendation": "Not enough data",
+                "reference_size": len(ref_df),
+                "current_size": len(curr_df)
+            })
+
+        # Clean
+        for df in [ref_df, curr_df]:
+            df.drop(columns=['student_id'], errors='ignore', inplace=True)
+
+        common_cols = ref_df.columns.intersection(curr_df.columns)
+        ref_df = ref_df[common_cols].copy()
+        curr_df = curr_df[common_cols].copy()
+
+        categorical = ['marital_status', 'application_mode', 'course', 'attendance_regime',
+                       'previous_qualification', 'nationality', 'mother_qualification',
+                       'father_qualification', 'mother_occupation', 'father_occupation',
+                       'displaced', 'educational_special_needs', 'debtor',
+                       'tuition_fees_up_to_date', 'gender', 'scholarship_holder', 'international']
+        numerical = [c for c in common_cols if c not in categorical and c != 'target']
+
+        drifted = []
+
+        # Categorical drift
+        for col in [c for c in categorical if c in common_cols]:
+            r_freq = ref_df[col].value_counts(normalize=True)
+            c_freq = curr_df[col].value_counts(normalize=True)
+            all_cats = r_freq.index.union(c_freq.index)
+            r_freq = r_freq.reindex(all_cats, fill_value=0)
+            c_freq = c_freq.reindex(all_cats, fill_value=0)
+            freq_diff = (r_freq - c_freq).abs().sum()
+            if freq_diff > 0.3:
+                drifted.append(f"{col} (cat, freq_diff={freq_diff:.2f})")
+
+        # Numerical drift
+        for col in numerical:
+            try:
+                r = pd.to_numeric(ref_df[col], errors='coerce').dropna()
+                c = pd.to_numeric(curr_df[col], errors='coerce').dropna()
+                if len(r) < 10 or len(c) < 10: continue
+                p = ks_2samp(r, c).pvalue
+                shift = abs(r.mean() - c.mean()) / ((r.std() + c.std()) / 2) if (r.std() + c.std()) > 0 else 0
+                if p < 0.05 or shift > 0.5:
+                    drifted.append(f"{col} (num, p={p:.3f}, shift={shift:.1f}σ)")
+            except:
+                pass
+
+        # Target drift p-value
+        target_p = 1.0
+        if 'target' in ref_df.columns and 'target' in curr_df.columns:
+            try:
+                r_t = pd.to_numeric(ref_df['target'], errors='coerce').dropna()
+                c_t = pd.to_numeric(curr_df['target'], errors='coerce').dropna()
+                if len(r_t) > 10 and len(c_t) > 10:
+                    target_p = ks_2samp(r_t, c_t).pvalue
+            except:
+                pass
+
+        total_features = len(numerical) + len([c for c in categorical if c in common_cols])
+        drift_ratio = len(drifted) / max(total_features, 1)
+        drift_detected = len(drifted) >= 2 or drift_ratio > 0.15 or target_p < 0.05
+
+        result = {
+            "dataset_drift_detected": bool(drift_detected),
+            "drift_share_percent": round(drift_ratio * 100, 2),
+            "drifted_features_count": len(drifted),
+            "drifted_features": drifted[:20],
+            "target_drift_p_value": round(target_p, 6),
+            "recommendation": "DRIFT DETECTED — RETRAIN MODEL!" if drift_detected else "Model is healthy",
+            "reference_size": len(ref_df),
+            "current_size": len(curr_df),
+            "generated_at": pd.Timestamp.now().isoformat(),
+        }
+
+        return JSONResponse(content=result)
+
+    except Exception as e:
+        return JSONResponse(content={
+            "dataset_drift_detected": False,
+            "drift_share_percent": 0,
+            "drifted_features": [],
+            "target_drift_p_value": 1.0000,
+            "recommendation": "Error occurred",
+            "error": str(e)
+        }, status_code=500)
+    finally:
+        cursor.close()
+        db.close()
+from fastapi import Response
+
+@app.get("/logs")
+def get_logs():
+    try:
+        with open("api_usage.log", "r", encoding="utf-8") as f:
+            lines = f.readlines()[-100:]  # Last 100 lines only
+        # Format nicely for humans
+        formatted = ""
+        for line in reversed(lines):
+            if "INFO" not in line or "{" not in line:
+                continue
+            try:
+                import json
+                data = json.loads(line.split("| INFO | ", 1)[1])
+                time = data.get("timestamp", "")[:19].replace("T", " ")
+                ip = data.get("ip", "unknown")
+                method = data.get("method", "")
+                endpoint = data.get("endpoint", "")
+                status = data.get("status", 0)
+                duration = data.get("duration_ms", 0)
+
+                status_color = "text-green-600" if status == 200 else "text-red-600"
+                method_color = "text-blue-600 font-bold"
+
+                formatted += f"""
+                <div class="py-3 border-b border-gray-700 hover:bg-gray-800 transition">
+                  <span class="text-gray-400 text-xs">{time}</span>
+                  <span class="ml-4 text-cyan-400">{ip}</span>
+                  <span class="ml-4 {method_color}">{method}</span>
+                  <span class="ml-4 text-purple-400">{endpoint}</span>
+                  <span class="ml-4 {status_color} font-bold">● {status}</span>
+                  <span class="ml-4 text-yellow-400 text-sm">{duration:.0f}ms</span>
+                </div>
+                """
+            except:
+                continue
+        return Response(content=formatted or "<div class='text-gray-500 p-8 text-center'>No API calls yet</div>", media_type="text/html")
+    except:
+        return Response(content="<div class='text-red-500 p-8 text-center'>Log file not found</div>", media_type="text/html")
+    from fastapi import File, UploadFile, HTTPException
+from fastapi import File, UploadFile, HTTPException
+import pandas as pd 
+import pandas as pd
+from sqlalchemy import create_engine   
+@app.post("/upload_csv")
+async def upload_csv(file: UploadFile = File(...)):
+    if not file.filename.lower().endswith(".csv"):
+        raise HTTPException(status_code=400, detail="Only CSV files are allowed")
+
+    try:
+        df = pd.read_csv(file.file)
+        df.rename(columns={
+    'Marital status': 'marital_status',
+    'Application mode': 'application_mode',
+    'Application order': 'application_order',
+    'Course': 'course',
+    'Daytime/evening attendance': 'attendance_regime',
+    'Previous qualification': 'previous_qualification',
+    'Nacionality': 'nationality',
+    "Mother's qualification": 'mother_qualification',
+    "Father's qualification": 'father_qualification',
+    "Mother's occupation": 'mother_occupation',
+    "Father's occupation": 'father_occupation',
+    'Displaced': 'displaced',
+    'Educational special needs': 'educational_special_needs',
+    'Debtor': 'debtor',
+    'Tuition fees up to date': 'tuition_fees_up_to_date',
+    'Gender': 'gender',
+    'Scholarship holder': 'scholarship_holder',
+    'Age at enrollment': 'age_at_enrollment',
+    'International': 'international',
+    'Curricular units 1st sem (credited)': 'cu_1st_sem_credited',
+    'Curricular units 1st sem (enrolled)': 'cu_1st_sem_enrolled',
+    'Curricular units 1st sem (evaluations)': 'cu_1st_sem_evaluations',
+    'Curricular units 1st sem (approved)': 'cu_1st_sem_approved',
+    'Curricular units 1st sem (grade)': 'cu_1st_sem_grade',
+    'Curricular units 1st sem (without evaluations)': 'cu_1st_sem_without_evaluation',
+    'Curricular units 2nd sem (credited)': 'cu_2nd_sem_credited',
+    'Curricular units 2nd sem (enrolled)': 'cu_2nd_sem_enrolled',
+    'Curricular units 2nd sem (evaluations)': 'cu_2nd_sem_evaluations',
+    'Curricular units 2nd sem (approved)': 'cu_2nd_sem_approved',
+    'Curricular units 2nd sem (grade)': 'cu_2nd_sem_grade',
+    'Curricular units 2nd sem (without evaluations)': 'cu_2nd_sem_without_evaluation',
+    'Unemployment rate': 'unemployment_rate',
+    'Inflation rate': 'inflation_rate',
+    'GDP': 'gdp',
+    'Target': 'target'
+        }, inplace=True)
+
+        # Connect to MySQL
+        engine = create_engine("mysql+pymysql://root:1234@localhost/student_db")
+
+        # Insert into table
+        df .to_sql('student_data', con=engine, if_exists='append', index=False)
+
+        return {
+            "status": "success",
+            "uploaded_students": len(df),
+            "message": f"Successfully uploaded {len(df)} students!"
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        if 'db' in locals():
+            db.rollback()
+        raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
+    finally:
+        if 'cursor' in locals():
+            cursor.close()
+        if 'db' in locals():
+            db.close()
